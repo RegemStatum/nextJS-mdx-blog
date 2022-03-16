@@ -1,0 +1,20 @@
+@use "../../styles/abstracts/" as *;
+
+.footer {
+  background-color: getColor("nt-1");
+  color: getColor("nt-9");
+
+  .container {
+    padding: getPadding(1000) 0;
+  }
+
+  .links_container {
+    display: flex;
+    gap: getMargin(1000);
+  }
+
+  .copyright {
+    padding-top: getPadding(1000);
+    @include text(300);
+  }
+}

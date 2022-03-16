@@ -1,0 +1,25 @@
+@use "../../../styles/abstracts/" as *;
+
+.container {
+  .title {
+    margin-bottom: getMargin(600);
+    @include text(400);
+    font-weight: 500;
+    color: getColor("nt-7");
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: getMargin(200);
+
+    li {
+      font-family: "Roboto", sans-serif;
+      @include text(300);
+
+      a {
+        color: getColor("nt-9");
+      }
+    }
+  }
+}
