@@ -1,0 +1,43 @@
+// ----------
+// Roboto
+// ----------
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: local("Roboto"),
+    url(../../public/fonts/Roboto/Roboto-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: local("Roboto"),
+    url(../../public/fonts/Roboto/Roboto-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: local("Roboto"),
+    url(../../public/fonts/Roboto/Roboto-Black.ttf) format("truetype");
+}
+
+// ----------
+// Open Sans
+// ----------
+
+@font-face {
+  font-family: "Open Sans", sans-serif;
+  src: local("Open Sans"),
+    url(../../public/fonts/OpenSans/OpenSans-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans", sans-serif;
+  src: local("Open Sans"),
+    url(../../public/fonts/OpenSans/OpenSans-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans", sans-serif;
+  src: local("Open Sans"),
+    url(../../public/fonts/OpenSans/OpenSans-ExtraBold.ttf) format("truetype");
+}

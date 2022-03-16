@@ -1,0 +1,32 @@
+@use "./abstracts" as *;
+@use "./base" as *;
+// @use "./themes/" as *;
+// @use "./vendors/" as *;
+
+// Components and layout scss files will be paired as modules with React components
+// Pages scss files will be imported from the folder when the exact page will load
+// @use "./components" as *;
+// @use "./layout" as *;
+// @use "./pages" as *;
+
+// Global styles
+body {
+  background-color: getColor("nt-10");
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "Roboto", sans-serif;
+  }
+
+  // xs
+  p {
+    font-family: "Open Sans", sans-serif;
+  }
+
+  a {
+    font-family: "Open Sans", sans-serif;
+  }
+}
