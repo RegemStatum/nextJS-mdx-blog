@@ -14,8 +14,6 @@ const Header: FC = () => {
           alt="logo"
           width="30"
           height="30"
-          placeholder="blur"
-          blurDataURL="/images/components/layout/logo.png"
         />
         <div className={styles.navigation}>
           <Navigation />
