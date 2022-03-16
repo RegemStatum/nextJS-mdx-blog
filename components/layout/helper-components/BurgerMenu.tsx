@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { useAppContext } from "../../context/AppProvider";
+import { useAppContext } from "../../../context/AppProvider";
 import styles from "./BurgerMenu.module.scss";
 
 const BurgerMenu: FC = () => {

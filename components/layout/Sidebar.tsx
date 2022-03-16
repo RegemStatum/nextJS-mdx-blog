@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { useAppContext } from "../../context/AppProvider";
-import Navigation from "./Navigation";
+import Navigation from "./helper-components/Navigation";
 import styles from "./Sidebar.module.scss";
 
 const Sidebar: FC = () => {

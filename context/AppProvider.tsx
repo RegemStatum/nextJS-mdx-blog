@@ -3,6 +3,7 @@ import React, { FC, createContext, useContext, useState } from "react";
 const defaultContextValue = {
   isSidebarOpen: false,
   toggleSidebarOpen: () => {},
+  closeSidebar: () => {},
 };
 
 const AppContext = createContext(defaultContextValue);
@@ -14,8 +15,14 @@ export const AppProvider: FC = ({ children }) => {
     setIsSidebarOpen((prevValue) => !prevValue);
   };
 
+  const closeSidebar = () => {
+    setIsSidebarOpen(false);
+  };
+
   return (
-    <AppContext.Provider value={{ isSidebarOpen, toggleSidebarOpen }}>
+    <AppContext.Provider
+      value={{ isSidebarOpen, toggleSidebarOpen, closeSidebar }}
+    >
       {children}
     </AppContext.Provider>
   );

@@ -9,13 +9,49 @@
     padding: getPadding(1000) 0;
   }
 
+  .logo {
+    display: flex;
+  }
+
   .navigation {
+    margin-left: auto;
+
     ul {
       display: none;
+      gap: getMargin(1000);
+
+      li {
+        padding: getPadding(1000) getPadding(800);
+        position: relative;
+        font-weight: 500;
+
+        &:hover {
+          cursor: pointer;
+
+          &::after {
+            content: "";
+            width: 100%;
+            height: 5px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: aqua;
+            clip-path: polygon(5% 0, 95% 0, 100% 100%, 0% 100%);
+          }
+        }
+
+        a {
+          color: getColor("nt-9");
+        }
+      }
     }
   }
 
   @include md {
+    .container {
+      padding: 0;
+    }
+
     .navigation {
       ul {
         display: flex;

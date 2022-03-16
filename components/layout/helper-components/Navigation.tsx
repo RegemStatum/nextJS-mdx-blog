@@ -10,27 +10,27 @@ const Navigation: FC<NavigationProps> = ({ isInSidebar = false }) => {
     <nav>
       <ul className="">
         <li>
-          <MyLink href="/" isInSidebar={isInSidebar}>
+          <MyLink href="/" closeSidebarOnClick={isInSidebar}>
             Home
           </MyLink>
         </li>
         <li>
-          <MyLink href="/posts" isInSidebar={isInSidebar}>
+          <MyLink href="/posts" closeSidebarOnClick={isInSidebar}>
             Posts
           </MyLink>
         </li>
         <li>
-          <MyLink href="/categories" isInSidebar={isInSidebar}>
+          <MyLink href="/categories" closeSidebarOnClick={isInSidebar}>
             Categories
           </MyLink>
         </li>
         <li>
-          <MyLink href="/about" isInSidebar={isInSidebar}>
+          <MyLink href="/about" closeSidebarOnClick={isInSidebar}>
             About
           </MyLink>
         </li>
         <li>
-          <MyLink href="/feedback" isInSidebar={isInSidebar}>
+          <MyLink href="/feedback" closeSidebarOnClick={isInSidebar}>
             Feedback
           </MyLink>
         </li>
