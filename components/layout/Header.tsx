@@ -7,15 +7,21 @@ import Navigation from "./Navigation";
 const Header: FC = () => {
   return (
     <header className={styles.header}>
-      <Image
-        className={styles.logo}
-        src="/images/components/layout/logo.png"
-        alt="logo"
-        width="30"
-        height="30"
-      />
-      <Navigation />
-      <BurgerMenu />
+      <div className={`container ${styles.container}`}>
+        <Image
+          className={styles.logo}
+          src="/images/components/layout/logo.png"
+          alt="logo"
+          width="30"
+          height="30"
+          placeholder="blur"
+          blurDataURL="/images/components/layout/logo.png"
+        />
+        <div className={styles.navigation}>
+          <Navigation />
+        </div>
+        <BurgerMenu />
+      </div>
     </header>
   );
 };

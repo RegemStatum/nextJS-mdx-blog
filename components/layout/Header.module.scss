@@ -2,4 +2,29 @@
 
 .header {
   background-color: getColor("nt-1");
+
+  .container {
+    display: flex;
+    align-items: center;
+    padding: getPadding(1000) 0;
+  }
+
+  // .logo {
+  //   display: block;
+  //   border-radius: 5px;
+  // }
+
+  .navigation {
+    ul {
+      display: none;
+    }
+  }
+
+  @include md {
+    .navigation {
+      ul {
+        display: flex;
+      }
+    }
+  }
 }

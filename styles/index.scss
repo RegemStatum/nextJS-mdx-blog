@@ -29,4 +29,9 @@ body {
   a {
     font-family: "Open Sans", sans-serif;
   }
+
+  .container {
+    width: auto;
+    margin: 0 getMargin(800);
+  }
 }
