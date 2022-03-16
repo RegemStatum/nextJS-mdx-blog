@@ -1,11 +1,21 @@
-import React, { FC, useEffect, useRef } from "react";
-import Portal from "../portal/Portal";
+import React, { FC } from "react";
+import { useAppContext } from "../../context/AppProvider";
+import Navigation from "./Navigation";
+import styles from "./Sidebar.module.scss";
 
 const Sidebar: FC = () => {
+  const { isSidebarOpen } = useAppContext();
+
   return (
-    <Portal renderToElementId="modal">
-      <aside>This is portalled Sidebar</aside>
-    </Portal>
+    <div
+      className={`${styles.container} ${
+        isSidebarOpen ? styles.show : styles.hide
+      }`}
+    >
+      <aside className={styles.sidebar}>
+        <Navigation isInSidebar={true} />
+      </aside>
+    </div>
   );
 };
 

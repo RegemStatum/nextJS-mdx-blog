@@ -1,24 +1,38 @@
-import Link from "next/link";
 import React, { FC } from "react";
+import MyLink from "./MyLink";
 
-const Navigation: FC = () => {
+interface NavigationProps {
+  isInSidebar?: boolean;
+}
+
+const Navigation: FC<NavigationProps> = ({ isInSidebar = false }) => {
   return (
     <nav>
       <ul className="">
         <li>
-          <Link href="/">Home</Link>
+          <MyLink href="/" isInSidebar={isInSidebar}>
+            Home
+          </MyLink>
         </li>
         <li>
-          <Link href="/posts">Posts</Link>
+          <MyLink href="/posts" isInSidebar={isInSidebar}>
+            Posts
+          </MyLink>
         </li>
         <li>
-          <Link href="/categories">Categories</Link>
+          <MyLink href="/categories" isInSidebar={isInSidebar}>
+            Categories
+          </MyLink>
         </li>
         <li>
-          <Link href="/about">About</Link>
+          <MyLink href="/about" isInSidebar={isInSidebar}>
+            About
+          </MyLink>
         </li>
         <li>
-          <Link href="/feedback">Feedback</Link>
+          <MyLink href="/feedback" isInSidebar={isInSidebar}>
+            Feedback
+          </MyLink>
         </li>
       </ul>
     </nav>

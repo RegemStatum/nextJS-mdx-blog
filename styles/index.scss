@@ -34,4 +34,9 @@ body {
     width: auto;
     margin: 0 getMargin(800);
   }
+
+  #modal {
+    position: absolute;
+    top: 0;
+  }
 }
