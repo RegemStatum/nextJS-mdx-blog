@@ -4,7 +4,7 @@ import Portal from "../portal/Portal";
 const Sidebar: FC = () => {
   return (
     <Portal renderToElementId="modal">
-      <div>This is portalled Sidebar</div>
+      <aside>This is portalled Sidebar</aside>
     </Portal>
   );
 };
