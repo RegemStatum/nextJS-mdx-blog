@@ -35,6 +35,10 @@ body {
     margin: 0 getMargin(800);
   }
 
+  .row {
+    display: flex;
+  }
+
   #modal {
     position: absolute;
     top: 0;

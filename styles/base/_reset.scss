@@ -56,16 +56,12 @@ img {
   display: block;
 }
 
-/* Указываем понятную периодичность в потоке данных у article*/
-article > * + * {
-  margin-top: 1em;
-}
-
 /* Наследуем шрифты для инпутов и кнопок */
 input,
 button,
 textarea,
-select {
+select,
+time {
   font: inherit;
   border: none;
 }

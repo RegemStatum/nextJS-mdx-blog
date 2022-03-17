@@ -10,14 +10,14 @@ const Header: FC = () => {
     <header className={styles.header}>
       <div className={`container ${styles.container}`}>
         <MyLink href="/" closeSidebarOnClick={true}>
-          <a className={styles.logo}>
+          <div className={styles.logo}>
             <Image
               src="/images/components/layout/logo.png"
               alt="logo"
               width="30"
               height="30"
             />
-          </a>
+          </div>
         </MyLink>
         <div className={styles.navigation}>
           <Navigation />

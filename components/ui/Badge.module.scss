@@ -1,0 +1,12 @@
+@use "../../styles/abstracts/" as *;
+
+.container {
+  width: max-content;
+  padding: getPadding(200);
+  border-radius: 5px;
+  font-weight: 500;
+
+  p {
+    @include text(300);
+  }
+}

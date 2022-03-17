@@ -1,0 +1,12 @@
+@use "../../styles/abstracts/" as *;
+
+.section {
+  padding-bottom: getPadding(1600);
+
+  .title {
+    margin-bottom: getMargin(800);
+    @include text(800);
+    font-weight: 900;
+    color: getColor("nt-6");
+  }
+}
