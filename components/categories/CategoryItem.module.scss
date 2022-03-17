@@ -1,0 +1,15 @@
+@use "../../styles/abstracts/" as *;
+
+.category {
+  padding: getPadding(1000) getPadding(800);
+  background-color: getColor("nt-9");
+  border-radius: 10px;
+  @include boxShadow2;
+
+  h3 {
+    @include text(600);
+    text-transform: capitalize;
+    font-weight: 900;
+    color: getColor("nt-3");
+  }
+}

@@ -18,6 +18,7 @@
       @include text(300);
 
       a {
+        text-transform: capitalize;
         color: getColor("nt-9");
       }
     }

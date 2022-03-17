@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import CategoriesList from "../categories/CategoriesLinks";
+import CategoriesLinks from "./helper-components/CategoriesLinks";
 import styles from "./Footer.module.scss";
 import FooterLinks from "./helper-components/FooterLinks";
 import Navigation from "./helper-components/Navigation";
@@ -13,7 +13,7 @@ const Footer: FC = () => {
             <Navigation />
           </FooterLinks>
           <FooterLinks title="Categories">
-            <CategoriesList />
+            <CategoriesLinks />
           </FooterLinks>
         </div>
         <p className={styles.copyright}>

@@ -9,7 +9,7 @@ const defaultContextValue = {
 
 const AppContext = createContext(defaultContextValue);
 
-const CATEGORIES = ["JavaScript", "TypeScript", "React", "NextJs"];
+const CATEGORIES = ["Javascript", "NextJs", "React", "Typescript"];
 
 export const AppProvider: FC = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
