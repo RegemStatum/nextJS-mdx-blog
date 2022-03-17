@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import PostsGrid from "../../components/posts/PostsGrid";
+import PageSection from "../../components/ui/PageSection";
 import { getAllPostsInfo, getCategories } from "../../helpers/posts-util";
 import PostInfo from "../../types/PostInfo";
 
@@ -8,12 +9,10 @@ interface AllPostsPageProps {
 }
 
 const AllPostsPage: NextPage<AllPostsPageProps> = ({ posts }) => {
-  console.log(posts);
-
   return (
-    <>
+    <PageSection title="Articles">
       <PostsGrid posts={posts} />
-    </>
+    </PageSection>
   );
 };
 

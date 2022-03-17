@@ -4,12 +4,16 @@ const defaultContextValue = {
   isSidebarOpen: false,
   toggleSidebarOpen: () => {},
   closeSidebar: () => {},
+  categories: [""],
 };
 
 const AppContext = createContext(defaultContextValue);
 
+const CATEGORIES = ["JavaScript", "TypeScript", "React", "NextJs"];
+
 export const AppProvider: FC = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [categories, setCategories] = useState(CATEGORIES);
 
   const toggleSidebarOpen = () => {
     setIsSidebarOpen((prevValue) => !prevValue);
@@ -21,7 +25,7 @@ export const AppProvider: FC = ({ children }) => {
 
   return (
     <AppContext.Provider
-      value={{ isSidebarOpen, toggleSidebarOpen, closeSidebar }}
+      value={{ isSidebarOpen, toggleSidebarOpen, closeSidebar, categories }}
     >
       {children}
     </AppContext.Provider>

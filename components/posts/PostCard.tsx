@@ -18,7 +18,6 @@ const PostCard: FC<PostInfo> = (props) => {
 
   const imgPath = `/images/posts/${category}/${mainImage}`;
   const badgeText = category[0].toUpperCase() + category.slice(1);
-  console.log(imgPath);
   const formattedDate = getFormattedDate(date);
 
   return (
@@ -30,7 +29,8 @@ const PostCard: FC<PostInfo> = (props) => {
             alt={title}
             width="80"
             height="80"
-            layout="responsive"
+            placeholder="blur"
+            blurDataURL={imgPath}
             className={styles.img}
           />
         </div>

@@ -39,6 +39,19 @@ body {
     display: flex;
   }
 
+  .grid {
+    display: grid;
+    gap: getMargin(800);
+
+    @include md {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include lg {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
   #modal {
     position: absolute;
     top: 0;

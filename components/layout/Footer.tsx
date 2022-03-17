@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import CategoriesList from "../categories/CategoriesList";
+import CategoriesList from "../categories/CategoriesLinks";
 import styles from "./Footer.module.scss";
 import FooterLinks from "./helper-components/FooterLinks";
 import Navigation from "./helper-components/Navigation";
