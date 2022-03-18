@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import formatPathToSlug from "./slugify";
 const matter = require("gray-matter");
 
 const getPostDirPath = () => {
@@ -46,6 +47,21 @@ const getCategoryPosts = (category: string) => {
   return postsInfo;
 };
 
+const getSinglePost = (category: string, postTitle: string) => {
+  const fileName = formatPathToSlug(postTitle) + ".mdx";
+  const postsDir = getPostDirPath();
+  const file = path.join(postsDir, category, fileName);
+  let fileData;
+  try {
+    fileData = fs.readFileSync(file).toString();
+  } catch (e) {
+    console.log(e);
+    return {};
+  }
+  const { data, content } = matter(fileData);
+  return { data, content };
+};
+
 const getFeaturedPostsInfo = () => {
   const allPosts = getAllPostsInfo();
   return allPosts.filter((post) => post.isFeatured);
@@ -56,4 +72,5 @@ export {
   getCategories,
   getFeaturedPostsInfo,
   getCategoryPosts,
+  getSinglePost,
 };
