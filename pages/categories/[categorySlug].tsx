@@ -1,6 +1,8 @@
 import type { GetStaticPaths, NextPage } from "next";
 import { GetStaticProps } from "next";
+import { useRouter } from "next/router";
 import PostsGrid from "../../components/posts/PostsGrid";
+import BreadCrumbs from "../../components/ui/BreadCrumbs";
 import PageSection from "../../components/ui/PageSection";
 import { getCategories, getCategoryPosts } from "../../helpers/posts-util";
 import PostInfo from "../../types/PostInfo";
@@ -14,8 +16,12 @@ const SingleCategoryPage: NextPage<SingleCategoryPageProps> = ({
   posts,
   category,
 }) => {
+  const router = useRouter();
+  const path = router.asPath;
+
   return (
     <>
+      <BreadCrumbs path={path} />
       <PageSection title={category}>
         <PostsGrid posts={posts} />
       </PageSection>

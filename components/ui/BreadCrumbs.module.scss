@@ -1,0 +1,13 @@
+@use "../../styles/abstracts/" as *;
+
+.breadcrumbs {
+  padding: getPadding(1000) 0;
+
+  span,
+  span a {
+    @include text(600);
+    text-transform: capitalize;
+    font-weight: 500;
+    color: getColor("nt-3");
+  }
+}
