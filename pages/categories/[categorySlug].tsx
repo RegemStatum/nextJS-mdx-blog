@@ -1,7 +1,56 @@
-import type { NextPage } from "next";
+import type { GetStaticPaths, NextPage } from "next";
+import { GetStaticProps } from "next";
+import PostsGrid from "../../components/posts/PostsGrid";
+import PageSection from "../../components/ui/PageSection";
+import { getCategories, getCategoryPosts } from "../../helpers/posts-util";
+import PostInfo from "../../types/PostInfo";
 
-const SingleCategoryPage: NextPage = () => {
-  return <div>SingleCategoryPage</div>;
+interface SingleCategoryPageProps {
+  posts: Array<PostInfo>;
+  category: string;
+}
+
+const SingleCategoryPage: NextPage<SingleCategoryPageProps> = ({
+  posts,
+  category,
+}) => {
+  return (
+    <>
+      <PageSection title={category}>
+        <PostsGrid posts={posts} />
+      </PageSection>
+    </>
+  );
 };
 
 export default SingleCategoryPage;
+
+export const getStaticProps: GetStaticProps = (context) => {
+  const category = context.params!.categorySlug;
+  let posts: string[] = [];
+  if (category && typeof category === "string") {
+    posts = getCategoryPosts(category);
+  }
+
+  return {
+    props: {
+      posts,
+      category,
+    },
+    revalidate: 3600,
+  };
+};
+
+export const getStaticPaths: GetStaticPaths = () => {
+  const categories = getCategories();
+  const paths = categories.map((category) => ({
+    params: {
+      categorySlug: category,
+    },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+};

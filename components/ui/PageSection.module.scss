@@ -7,6 +7,7 @@
     margin-bottom: getMargin(800);
     @include text(800);
     font-weight: 900;
+    text-transform: capitalize;
     color: getColor("nt-6");
   }
 }

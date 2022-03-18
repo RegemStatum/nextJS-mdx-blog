@@ -3,8 +3,7 @@ import path from "path";
 const matter = require("gray-matter");
 
 const getPostDirPath = () => {
-  const postFolderPath = path.join(process.cwd(), "posts");
-  return postFolderPath;
+  return path.join(process.cwd(), "posts");
 };
 
 const getCategories = () => {
@@ -15,22 +14,35 @@ const getCategories = () => {
 
 const getAllPostsInfo = () => {
   const postsDir = getPostDirPath();
-  const folders = fs.readdirSync(postsDir);
+  const categories = fs.readdirSync(postsDir);
   const postsInfo = [];
 
-  for (const folder of folders) {
-    const categoryDir = path.join(postsDir, folder);
+  for (const category of categories) {
+    const categoryDir = path.join(postsDir, category);
     const categoryPosts = fs.readdirSync(categoryDir);
 
     for (const post of categoryPosts) {
       const postFile = path.join(categoryDir, post);
       const file = fs.readFileSync(postFile);
       const { data } = matter(file);
-
       postsInfo.push({ ...data });
     }
   }
+  return postsInfo;
+};
 
+const getCategoryPosts = (category: string) => {
+  const postsDir = getPostDirPath();
+  const categoryDir = path.join(postsDir, category);
+  const categoryPosts = fs.readdirSync(categoryDir);
+  const postsInfo = [];
+
+  for (const post of categoryPosts) {
+    const postFile = path.join(categoryDir, post);
+    const postData = fs.readFileSync(postFile);
+    const { data } = matter(postData);
+    postsInfo.push({ ...data });
+  }
   return postsInfo;
 };
 
@@ -39,4 +51,9 @@ const getFeaturedPostsInfo = () => {
   return allPosts.filter((post) => post.isFeatured);
 };
 
-export { getAllPostsInfo, getCategories, getFeaturedPostsInfo };
+export {
+  getAllPostsInfo,
+  getCategories,
+  getFeaturedPostsInfo,
+  getCategoryPosts,
+};
