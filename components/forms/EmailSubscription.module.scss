@@ -1,0 +1,59 @@
+@use "../../styles/abstracts/" as *;
+
+.container {
+  padding: getPadding(600);
+  background-color: getColor("nt-10");
+  border-radius: 10px;
+  @include boxShadow3;
+
+  label {
+    margin-bottom: getMargin();
+    display: block;
+    font-family: "Roboto", sans-serif;
+    @include text(600);
+    font-weight: 500;
+    color: getColor("nt-4");
+  }
+
+  input {
+    width: 100%;
+    padding: getPadding(600) getPadding();
+    background-color: getColor("nt-9");
+    border-radius: 5px;
+    color: getColor("nt-4");
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    margin-top: getMargin(600);
+    padding: getPadding(800);
+    background-color: getColor("sp-tel-5");
+    border-radius: 5px;
+    font-family: "Roboto", sans-serif;
+    @include text(600);
+    font-weight: 500;
+    color: getColor("sp-tel-10");
+    cursor: pointer;
+    transition: color 0.2s ease-out;
+
+    &:hover {
+      color: getColor("sp-tel-1");
+    }
+  }
+
+  .badge {
+    margin-top: getMargin(600);
+  }
+
+  @include sm {
+    padding: getPadding(1000);
+  }
+
+  @include md {
+    width: 40vw;
+    min-width: 400px;
+  }
+}

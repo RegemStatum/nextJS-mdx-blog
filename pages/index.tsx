@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import EmailSubscription from "../components/forms/EmailSubscription";
 import PostsGrid from "../components/posts/PostsGrid";
 import PageSection from "../components/ui/PageSection";
 import { getFeaturedPostsInfo } from "../helpers/posts-util";
@@ -15,7 +16,7 @@ const HomePage: NextPage<HomePageProps> = ({ featuredPosts }) => {
         <PostsGrid posts={featuredPosts} />
       </PageSection>
       <PageSection title="Subscribe">
-        <></>
+        <EmailSubscription />
       </PageSection>
     </>
   );

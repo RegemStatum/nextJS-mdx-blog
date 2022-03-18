@@ -12,6 +12,7 @@
 // Global styles
 body {
   background-color: getColor("nt-10");
+  font-family: "Open Sans", sans-serif;
 
   h1,
   h2,
@@ -33,6 +34,14 @@ body {
   .container {
     width: auto;
     margin: 0 getMargin(800);
+
+    @include md {
+      margin: 0 getMargin(1200);
+    }
+
+    @include lg {
+      margin: 0 getMargin(1400);
+    }
   }
 
   .row {

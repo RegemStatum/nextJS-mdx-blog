@@ -4,6 +4,7 @@
   padding-bottom: getPadding(1600);
 
   .title {
+    margin-left: getMargin(200);
     margin-bottom: getMargin(800);
     @include text(800);
     font-weight: 900;
