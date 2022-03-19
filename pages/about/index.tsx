@@ -1,19 +1,8 @@
 import type { NextPage } from "next";
-import path from "path";
-import fs from "fs";
-import matter from "gray-matter";
-
-//
-import { serialize } from "next-mdx-remote/serialize";
+import getAboutPageData from "../../helpers/about-page-data";
 import { MDXRemote } from "next-mdx-remote";
-
 import Image from "next/image";
 import Badge from "../../components/ui/Badge";
-
-const components = {
-  Image,
-  Badge,
-};
 
 interface AboutPageProps {
   meta: { [key: string]: any };
@@ -21,25 +10,15 @@ interface AboutPageProps {
 }
 
 const AboutPage: NextPage<AboutPageProps> = ({ meta, source }) => {
-  return <MDXRemote {...source} components={components} />;
+  return <MDXRemote {...source} components={{ Image, Badge }} />;
 };
 
 export default AboutPage;
 
 export async function getStaticProps() {
-  const aboutPostFile = path.join(
-    process.cwd(),
-    "components",
-    "posts",
-    "about-post",
-    "About"
-  );
-
-  const source = fs.readFileSync(aboutPostFile + ".mdx").toString();
-  const { data: meta, content } = matter(source);
-  const mdxSource = await serialize(content);
+  const { meta, source } = await getAboutPageData();
 
   return {
-    props: { meta, source: mdxSource },
+    props: { meta, source },
   };
 }

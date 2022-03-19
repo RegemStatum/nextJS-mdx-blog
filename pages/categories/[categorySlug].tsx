@@ -1,5 +1,4 @@
-import type { GetStaticPaths, NextPage } from "next";
-import { GetStaticProps } from "next";
+import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { useRouter } from "next/router";
 import PostsGrid from "../../components/posts/PostsGrid";
 import BreadCrumbs from "../../components/ui/BreadCrumbs";

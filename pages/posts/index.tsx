@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import PostsGrid from "../../components/posts/PostsGrid";
 import PageSection from "../../components/ui/PageSection";
-import { getAllPostsInfo, getCategories } from "../../helpers/posts-util";
+import { getAllPostsInfo } from "../../helpers/posts-util";
 import PostInfo from "../../types/PostInfo";
 
 interface AllPostsPageProps {
@@ -25,5 +25,6 @@ export function getStaticProps() {
     props: {
       posts: getAllPostsInfo(),
     },
+    revalidate: 3600,
   };
 }

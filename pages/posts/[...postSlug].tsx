@@ -1,20 +1,6 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
-import { MDXProvider } from "@mdx-js/react";
 import { getFeaturedPostsInfo, getSinglePost } from "../../helpers/posts-util";
-import { serialize } from "next-mdx-remote/serialize";
-import { MDXRemote } from "next-mdx-remote";
-
-import Image from "next/image";
-import Badge from "../../components/ui/Badge";
-import PageSection from "../../components/ui/PageSection";
-import BreadCrumbs from "../../components/ui/BreadCrumbs";
-import { useRouter } from "next/router";
-
-const components = {
-  Image,
-  Badge,
-  PageSection,
-};
+import SinglePost from "../../components/posts/single-post/SinglePost";
 
 interface SinglePostPageProps {
   meta: { [key: string]: any };
@@ -22,14 +8,7 @@ interface SinglePostPageProps {
 }
 
 const SinglePostPage: NextPage<SinglePostPageProps> = ({ meta, source }) => {
-  const router = useRouter();
-  const path = router.asPath;
-
-  return (
-    <>
-      <MDXRemote {...source} components={components} />
-    </>
-  );
+  return <SinglePost meta={meta} source={source} />;
 };
 
 export default SinglePostPage;
@@ -40,11 +19,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
     slug = context.params!.postSlug;
   }
   const [category, postTitle] = slug;
-  const { meta, content } = getSinglePost(category, postTitle);
-  const mdxSource = await serialize(content);
+  const { meta, source } = await getSinglePost(category, postTitle);
 
   return {
-    props: { meta, source: mdxSource },
+    props: { meta, source },
   };
 };
 

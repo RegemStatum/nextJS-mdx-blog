@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import formatPathToSlug from "./slugify";
+import { serialize } from "next-mdx-remote/serialize";
 const matter = require("gray-matter");
 
 const getPostDirPath = () => {
@@ -47,7 +48,7 @@ const getCategoryPosts = (category: string) => {
   return postsInfo;
 };
 
-const getSinglePost = (category: string, postTitle: string) => {
+const getSinglePost = async (category: string, postTitle: string) => {
   const fileName = formatPathToSlug(postTitle) + ".mdx";
   const postsDir = getPostDirPath();
   const file = path.join(postsDir, category, fileName);
@@ -59,7 +60,8 @@ const getSinglePost = (category: string, postTitle: string) => {
     return {};
   }
   const { data: meta, content } = matter(fileData);
-  return { meta, content };
+  const mdxSource = await serialize(content);
+  return { meta, source: mdxSource };
 };
 
 const getFeaturedPostsInfo = () => {
