@@ -1,0 +1,17 @@
+@use "../../styles/abstracts/" as *;
+
+.post {
+  & > span:first-of-type {
+    display: block;
+    margin-bottom: getMargin(800);
+    border-radius: 50%;
+
+    img {
+      margin-bottom: getMargin(800);
+    }
+  }
+
+  & > h1:first-of-type {
+    margin-top: getMargin(1200);
+  }
+}

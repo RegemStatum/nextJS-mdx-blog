@@ -1,0 +1,27 @@
+@use "../../../styles/abstracts/" as *;
+
+.container {
+  padding: getPadding(600);
+  border-radius: 5px;
+  @include boxShadow2;
+
+  &.hint {
+    color: getColor("sp-ylw-1");
+    background-color: getColor("sp-ylw-9");
+  }
+
+  &.question {
+    color: getColor("sp-ble-1");
+    background-color: getColor("sp-ble-9");
+  }
+
+  &.warning {
+    color: getColor("sp-red-1");
+    background-color: getColor("sp-red-9");
+  }
+
+  &.success {
+    color: getColor("sp-grn-1");
+    background-color: getColor("sp-grn-9");
+  }
+}

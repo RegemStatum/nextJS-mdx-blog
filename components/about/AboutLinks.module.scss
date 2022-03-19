@@ -1,0 +1,15 @@
+@use "../../styles/abstracts/" as *;
+
+.container {
+  display: flex;
+  gap: getMargin(1000);
+  margin-top: getMargin(800);
+  padding: getPadding(1200);
+  background-color: getColor("nt-9");
+  border-radius: 10px;
+  @include boxShadow2;
+
+  a {
+    display: flex;
+  }
+}

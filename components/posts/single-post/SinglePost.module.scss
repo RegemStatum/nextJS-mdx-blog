@@ -1,6 +1,8 @@
 @use "../../../styles/abstracts/" as *;
 
 .post {
+  margin: getMargin(1600) getMargin(800) getMargin(1800) getMargin(800);
+
   p {
     @include text(300);
     color: getColor("nt-4");
@@ -29,12 +31,48 @@
   }
 
   h4 {
-    margin-top: getMargin(1000);
-    margin-bottom: getMargin(400);
+    margin-bottom: getMargin(200);
     @include text(500);
     font-weight: 500;
   }
 
-  @include lg {
+  img {
+    object-fit: cover;
+  }
+
+  section {
+    margin: getMargin(1200) 0;
+
+    & > article:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  article {
+    margin-top: getMargin(1000);
+  }
+
+  @include md {
+    p {
+      @include text(400);
+    }
+
+    h1 {
+      @include text(900);
+    }
+
+    h2 {
+      @include text(800);
+    }
+
+    h3 {
+      @include text(700);
+    }
+
+    h4 {
+      margin-bottom: getMargin(200);
+      @include text(600);
+      font-weight: 500;
+    }
   }
 }
