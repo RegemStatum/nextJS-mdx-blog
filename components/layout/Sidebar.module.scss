@@ -21,9 +21,10 @@
     ul {
       display: flex;
       flex-direction: column;
-      gap: getMargin(400);
+      gap: getMargin(800);
 
       li a {
+        @include text(600);
         font-weight: 500;
         color: getColor("nt-1");
 

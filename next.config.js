@@ -9,10 +9,12 @@
 
 // module.exports = nextConfig;
 
+const remarkFrontmatter = import("remark-frontmatter");
+
 const withMDX = require("@next/mdx")({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [],
+    remarkPlugins: [remarkFrontmatter],
     rehypePlugins: [],
     providerImportSource: "@mdx-js/react",
   },
