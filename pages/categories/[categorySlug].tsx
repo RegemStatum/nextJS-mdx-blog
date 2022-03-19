@@ -20,7 +20,7 @@ const SingleCategoryPage: NextPage<SingleCategoryPageProps> = ({
   const path = router.asPath;
 
   return (
-    <div className="page">
+    <div className="page page-min-height">
       <BreadCrumbs path={path} />
       <PageSection title={category}>
         <PostsGrid posts={posts} />

@@ -11,7 +11,7 @@ interface AllPostsPageProps {
 const AllPostsPage: NextPage<AllPostsPageProps> = ({ posts }) => {
   return (
     <div className="page">
-      <PageSection title="Articles">
+      <PageSection title="Posts">
         <PostsGrid posts={posts} />
       </PageSection>
     </div>

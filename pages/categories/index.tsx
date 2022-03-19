@@ -11,7 +11,7 @@ const AllCategoriesPage: NextPage<AllCategoriesPageProps> = ({
   categories,
 }) => {
   return (
-    <div className="page">
+    <div className="page page-min-height">
       <PageSection title="Categories">
         <CategoriesGrid categories={categories} />
       </PageSection>

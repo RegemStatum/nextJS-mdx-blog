@@ -28,5 +28,7 @@
 
   button {
     @include formBtn;
+    padding-left: getPadding(1200);
+    padding-right: getPadding(1200);
   }
 }
