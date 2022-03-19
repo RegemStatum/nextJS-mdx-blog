@@ -21,7 +21,7 @@
       gap: getMargin(1000);
 
       li {
-        padding: getPadding(1000) getPadding(800);
+        padding: getPadding(1000) 0;
         position: relative;
         font-weight: 500;
 
@@ -41,6 +41,7 @@
         }
 
         a {
+          padding: getPadding(1000) getPadding(800);
           color: getColor("nt-9");
         }
       }

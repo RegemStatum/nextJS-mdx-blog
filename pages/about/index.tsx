@@ -2,7 +2,8 @@ import type { NextPage } from "next";
 import getAboutPageData from "../../helpers/about-page-data";
 import { MDXRemote } from "next-mdx-remote";
 import Image from "next/image";
-import Badge from "../../components/ui/Badge";
+import AboutLinks from "../../components/about/AboutLinks";
+import styles from "../../components/posts/single-post/SinglePost.module.scss";
 
 interface AboutPageProps {
   meta: { [key: string]: any };
@@ -10,7 +11,11 @@ interface AboutPageProps {
 }
 
 const AboutPage: NextPage<AboutPageProps> = ({ meta, source }) => {
-  return <MDXRemote {...source} components={{ Image, Badge }} />;
+  return (
+    <div className={`container ${styles.post}`}>
+      <MDXRemote {...source} components={{ Image, AboutLinks }} />
+    </div>
+  );
 };
 
 export default AboutPage;

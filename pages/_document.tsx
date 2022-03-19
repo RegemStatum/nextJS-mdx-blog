@@ -5,7 +5,7 @@ export default function Document() {
     <Html lang="en">
       <Head>
         {/* preloading fonts */}
-        <link
+        {/* <link
           rel="preload"
           href="/fonts/Roboto/Roboto-Regular.ttf"
           as="font"
@@ -46,7 +46,7 @@ export default function Document() {
           as="font"
           crossOrigin=""
           type="font/ttf"
-        />
+        /> */}
         {/* end of preloading fonts */}
       </Head>
       <body>

@@ -7,8 +7,7 @@ const getAboutPageData = async () => {
   const aboutPostFile = path.join(
     process.cwd(),
     "components",
-    "posts",
-    "about-post",
+    "about",
     "About"
   );
 

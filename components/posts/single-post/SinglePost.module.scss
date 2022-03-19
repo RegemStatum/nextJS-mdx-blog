@@ -1,0 +1,40 @@
+@use "../../../styles/abstracts/" as *;
+
+.post {
+  p {
+    @include text(300);
+    color: getColor("nt-4");
+    line-height: 170%;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: getColor("nt-2");
+    font-weight: 900;
+  }
+
+  h1 {
+    @include text(800);
+  }
+
+  h2 {
+    @include text(700);
+  }
+
+  h3 {
+    @include text(600);
+    font-weight: 500;
+  }
+
+  h4 {
+    margin-top: getMargin(1000);
+    margin-bottom: getMargin(400);
+    @include text(500);
+    font-weight: 500;
+  }
+
+  @include lg {
+  }
+}
