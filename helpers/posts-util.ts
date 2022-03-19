@@ -58,8 +58,8 @@ const getSinglePost = (category: string, postTitle: string) => {
     console.log(e);
     return {};
   }
-  const { data, content } = matter(fileData);
-  return { data, content };
+  const { data: meta, content } = matter(fileData);
+  return { meta, content };
 };
 
 const getFeaturedPostsInfo = () => {

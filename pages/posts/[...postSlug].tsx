@@ -1,26 +1,34 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { MDXProvider } from "@mdx-js/react";
 import { getFeaturedPostsInfo, getSinglePost } from "../../helpers/posts-util";
-import PostInfo from "../../types/PostInfo";
-// checking mdx
-import Post from "../../posts/nextJs/needful-sites-for-nextJS.mdx";
-import markdownToHtml from "../../helpers/mdToHtml";
+import { serialize } from "next-mdx-remote/serialize";
+import { MDXRemote } from "next-mdx-remote";
+
+import Image from "next/image";
+import Badge from "../../components/ui/Badge";
+import PageSection from "../../components/ui/PageSection";
+import BreadCrumbs from "../../components/ui/BreadCrumbs";
+import { useRouter } from "next/router";
+
+const components = {
+  Image,
+  Badge,
+  PageSection,
+};
 
 interface SinglePostPageProps {
-  post: any;
-  meta: {};
+  meta: { [key: string]: any };
+  source: any;
 }
 
-const SinglePostPage: NextPage<SinglePostPageProps> = ({ post, meta }) => {
-  if (Object.keys(post).length === 0) {
-    return <h2>There is no such post!</h2>;
-  }
+const SinglePostPage: NextPage<SinglePostPageProps> = ({ meta, source }) => {
+  const router = useRouter();
+  const path = router.asPath;
 
   return (
-    <MDXProvider>
-      {/* <div dangerouslySetInnerHTML={{ __html: post }}></div> */}
-      <Post />
-    </MDXProvider>
+    <>
+      <MDXRemote {...source} components={components} />
+    </>
   );
 };
 
@@ -32,11 +40,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
     slug = context.params!.postSlug;
   }
   const [category, postTitle] = slug;
-  const postMD = getSinglePost(category, postTitle);
-  const postHtml = await markdownToHtml(postMD.content);
+  const { meta, content } = getSinglePost(category, postTitle);
+  const mdxSource = await serialize(content);
 
   return {
-    props: { post: postHtml, meta: postMD.data },
+    props: { meta, source: mdxSource },
   };
 };
 
