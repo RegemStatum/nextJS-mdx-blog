@@ -11,11 +11,11 @@ const AllCategoriesPage: NextPage<AllCategoriesPageProps> = ({
   categories,
 }) => {
   return (
-    <>
+    <div className="page">
       <PageSection title="Categories">
         <CategoriesGrid categories={categories} />
       </PageSection>
-    </>
+    </div>
   );
 };
 

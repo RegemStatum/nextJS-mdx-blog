@@ -44,6 +44,11 @@ body {
     }
   }
 
+  .page {
+    margin-top: getMargin(1600);
+    margin-bottom: getMargin(800);
+  }
+
   .row {
     display: flex;
   }

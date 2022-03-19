@@ -20,12 +20,12 @@ const SingleCategoryPage: NextPage<SingleCategoryPageProps> = ({
   const path = router.asPath;
 
   return (
-    <>
+    <div className="page">
       <BreadCrumbs path={path} />
       <PageSection title={category}>
         <PostsGrid posts={posts} />
       </PageSection>
-    </>
+    </div>
   );
 };
 

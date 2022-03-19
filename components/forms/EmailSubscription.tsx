@@ -37,7 +37,7 @@ const EmailSubscription: FC = () => {
       }
 
       try {
-        await fetch(dbUrl, {
+        await fetch(dbUrl + "/emails.json", {
           method: "POST",
           body: JSON.stringify(email),
           headers: {
@@ -56,25 +56,20 @@ const EmailSubscription: FC = () => {
     }
   };
 
-  // remove error badge after 5 sec
+  // remove error/success badge after 5 sec
   useEffect(() => {
     const timer = setTimeout(() => {
-      setErrorMsg("");
+      if (errorMsg) {
+        setErrorMsg("");
+      }
+      if (isSuccess) {
+        setIsSuccess(false);
+      }
     }, 5000);
     return () => {
       clearTimeout(timer);
     };
-  }, [errorMsg]);
-
-  // remove success badge after 5 sec
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsSuccess(false);
-    }, 5000);
-    return () => {
-      clearTimeout(timer);
-    };
-  }, [isSuccess]);
+  }, [errorMsg, isSuccess]);
 
   return (
     <div className={styles.container}>
@@ -84,7 +79,8 @@ const EmailSubscription: FC = () => {
           type="email"
           id="email"
           name="email"
-          placeholder="Enter your email here"
+          placeholder="Enter your email"
+          required
           ref={emailInputRef}
         />
         {isLoading && (

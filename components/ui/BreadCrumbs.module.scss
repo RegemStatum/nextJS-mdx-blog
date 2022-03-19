@@ -1,7 +1,7 @@
 @use "../../styles/abstracts/" as *;
 
 .breadcrumbs {
-  padding: getPadding(1000) 0;
+  padding-bottom: getPadding(1200);
 
   span,
   span a {

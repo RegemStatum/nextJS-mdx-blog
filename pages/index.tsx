@@ -11,14 +11,14 @@ interface HomePageProps {
 
 const HomePage: NextPage<HomePageProps> = ({ featuredPosts }) => {
   return (
-    <>
+    <div className="page">
       <PageSection title="Featured Articles">
         <PostsGrid posts={featuredPosts} />
       </PageSection>
       <PageSection title="Subscribe">
         <EmailSubscription />
       </PageSection>
-    </>
+    </div>
   );
 };
 

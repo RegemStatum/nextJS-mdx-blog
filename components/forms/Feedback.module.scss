@@ -7,15 +7,26 @@
     @include formLabel;
   }
 
-  input {
+  input,
+  textarea {
     @include formInput;
   }
 
-  button {
-    @include formBtn;
+  input {
+    margin-bottom: getMargin(800);
+  }
+
+  textarea {
+    min-height: 7rem;
+    max-height: 20rem;
+    resize: vertical;
   }
 
   .badge {
     margin-top: getMargin(600);
+  }
+
+  button {
+    @include formBtn;
   }
 }
