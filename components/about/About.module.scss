@@ -4,7 +4,7 @@
   & > span:first-of-type {
     display: block;
     margin-bottom: getMargin(800);
-    border-radius: 50%;
+    border-radius: 5px;
 
     img {
       margin-bottom: getMargin(800);
@@ -12,6 +12,6 @@
   }
 
   & > h1:first-of-type {
-    margin-top: getMargin(1200);
+    margin: getMargin(1200) 0;
   }
 }

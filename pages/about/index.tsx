@@ -4,8 +4,6 @@ import { MDXRemote } from "next-mdx-remote";
 // post components
 import Image from "next/image";
 import AboutLinks from "../../components/about/AboutLinks";
-import Section from "../../components/posts/single-post/layout/Section";
-import Article from "../../components/posts/single-post/layout/Article";
 import Highlight from "../../components/posts/single-post/Highlight";
 // styles
 import postStyles from "../../components/posts/single-post/SinglePost.module.scss";
@@ -19,10 +17,7 @@ interface AboutPageProps {
 const AboutPage: NextPage<AboutPageProps> = ({ meta, source }) => {
   return (
     <div className={`page-min-height ${postStyles.post} ${aboutStyles.post}`}>
-      <MDXRemote
-        {...source}
-        components={{ Image, AboutLinks, Section, Article, Highlight }}
-      />
+      <MDXRemote {...source} components={{ Image, AboutLinks, Highlight }} />
     </div>
   );
 };

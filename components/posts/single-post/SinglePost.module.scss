@@ -1,10 +1,12 @@
 @use "../../../styles/abstracts/" as *;
 
 .post {
-  margin: getMargin(1600) getMargin(800) getMargin(1800) getMargin(800);
+  max-width: 700px;
+  margin: getMargin(1400) getMargin(800) getMargin(1600) getMargin(800);
 
   p {
     @include text(300);
+    font-weight: 400;
     color: getColor("nt-4");
     line-height: 170%;
   }
@@ -26,12 +28,12 @@
   }
 
   h3 {
+    margin-bottom: getMargin(400);
     @include text(600);
     font-weight: 500;
   }
 
   h4 {
-    margin-bottom: getMargin(200);
     @include text(500);
     font-weight: 500;
   }
@@ -49,10 +51,12 @@
   }
 
   article {
-    margin-top: getMargin(1000);
+    margin-top: getMargin(1200);
   }
 
   @include md {
+    margin: getMargin(1600) auto getMargin(1800) auto;
+
     p {
       @include text(400);
     }
@@ -70,9 +74,11 @@
     }
 
     h4 {
-      margin-bottom: getMargin(200);
       @include text(600);
-      font-weight: 500;
     }
+  }
+
+  @include xl {
+    max-width: 900px;
   }
 }

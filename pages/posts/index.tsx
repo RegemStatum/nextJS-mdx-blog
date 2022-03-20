@@ -10,7 +10,7 @@ interface AllPostsPageProps {
 
 const AllPostsPage: NextPage<AllPostsPageProps> = ({ posts }) => {
   return (
-    <div className="page">
+    <div className="page page-min-height">
       <PageSection title="Posts">
         <PostsGrid posts={posts} />
       </PageSection>

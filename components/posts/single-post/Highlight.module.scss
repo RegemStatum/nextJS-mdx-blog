@@ -1,27 +1,66 @@
 @use "../../../styles/abstracts/" as *;
 
 .container {
+  margin-top: getMargin(1200);
   padding: getPadding(600);
   border-radius: 5px;
   @include boxShadow2;
+  color: getColor("sp-ylw-1");
+  background-color: getColor("sp-ylw-9");
+
+  & > div {
+    margin-bottom: getMargin(800);
+    display: flex;
+  }
+
+  span {
+    margin-left: getMargin(400);
+    align-self: flex-end;
+    font-family: "Roboto", sans-serif;
+    @include text(600);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 116%;
+  }
+
+  .text {
+    @include text(400);
+  }
 
   &.hint {
-    color: getColor("sp-ylw-1");
     background-color: getColor("sp-ylw-9");
+
+    .text,
+    span {
+      color: getColor("sp-ylw-1");
+    }
   }
 
   &.question {
-    color: getColor("sp-ble-1");
     background-color: getColor("sp-ble-9");
+
+    .text,
+    span {
+      color: getColor("sp-ble-1");
+    }
   }
 
   &.warning {
-    color: getColor("sp-red-1");
     background-color: getColor("sp-red-9");
+
+    .text,
+    span {
+      color: getColor("sp-red-1");
+    }
   }
 
   &.success {
-    color: getColor("sp-grn-1");
-    background-color: getColor("sp-grn-9");
+    background-color: getColor("sp-tel-9");
+
+    .text,
+    span {
+      color: getColor("sp-tel-1");
+    }
   }
 }

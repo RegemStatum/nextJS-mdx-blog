@@ -21,7 +21,14 @@ const Highlight: FC<HighlightProps> = ({ type, text }) => {
       ? questionImg
       : successImg;
 
-  const style = `styles.${type}`;
+  const style =
+    type === "hint"
+      ? styles.hint
+      : type === "warning"
+      ? styles.warning
+      : type === "question"
+      ? styles.question
+      : styles.success;
 
   return (
     <div className={`${styles.container} ${style}`}>
@@ -29,7 +36,7 @@ const Highlight: FC<HighlightProps> = ({ type, text }) => {
         <Image src={imgSrc} alt={type} width="30" height="30" />
         <span>{type}</span>
       </div>
-      {text}
+      <p className={styles.text}>{text}</p>
     </div>
   );
 };
