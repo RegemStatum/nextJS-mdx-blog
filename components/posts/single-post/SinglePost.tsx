@@ -13,7 +13,9 @@ interface SinglePostProps {
   source: any;
 }
 
-const code = ({ className, ...props }) => {
+type CodeFunction = (obj: { [key: string]: any }) => void;
+
+const code: CodeFunction = ({ className, ...props }) => {
   const match = /language-(\w+)/.exec(className || "");
   return match ? (
     <SyntaxHighlighter language={match[1]} PreTag="div" {...props} />

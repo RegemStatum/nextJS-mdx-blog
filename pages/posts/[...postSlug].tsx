@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
 export const getStaticPaths: GetStaticPaths = () => {
   const featuredPosts = getFeaturedPostsInfo();
   let paths = featuredPosts.map((post) => {
-    return "/posts/" + post.title.split(" ").join("%20");
+    return "/posts/" + post.category + "/" + post.title.split(" ").join("%20");
   });
 
   return {
