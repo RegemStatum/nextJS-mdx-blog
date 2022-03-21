@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import Head from "next/head";
 import EmailSubscription from "../components/forms/EmailSubscription";
 import PostsGrid from "../components/posts/PostsGrid";
 import PageSection from "../components/ui/PageSection";
@@ -12,6 +13,13 @@ interface HomePageProps {
 const HomePage: NextPage<HomePageProps> = ({ featuredPosts }) => {
   return (
     <div className="page">
+      <Head>
+        <title>AlKon MDX | Home</title>
+        <meta
+          name="description"
+          content="Al Kon mdx blog home page with featured articles and email subscription"
+        />
+      </Head>
       <PageSection title="Featured Posts">
         <PostsGrid posts={featuredPosts} />
       </PageSection>

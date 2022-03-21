@@ -1,0 +1,24 @@
+@use "../abstracts/" as *;
+
+.container {
+  width: max-content;
+  margin: 0 auto;
+  text-align: center;
+  font-weight: 500;
+
+  span {
+    display: block;
+    margin-bottom: getMargin(1200);
+    @include text(1200);
+
+    color: getColor("nt-2");
+  }
+
+  a {
+    color: getColor("nt-5");
+    padding: getPadding(400);
+    background-color: getColor("nt-9");
+    border-radius: 5px;
+    @include boxShadow2;
+  }
+}

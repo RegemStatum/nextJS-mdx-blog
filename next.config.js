@@ -1,14 +1,4 @@
 /** @type {import('next').NextConfig} */
-// const nextConfig = {
-//   reactStrictMode: true,
-//   env: {
-//     DB_URL:
-//       "https://nextjs-mdx-blog-default-rtdb.europe-west1.firebasedatabase.app/emails.json",
-//   },
-// };
-
-// module.exports = nextConfig;
-
 const remarkFrontmatter = import("remark-frontmatter");
 
 const withMDX = require("@next/mdx")({

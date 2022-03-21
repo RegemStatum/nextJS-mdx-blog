@@ -1,7 +1,6 @@
 @use "../../../styles/abstracts/" as *;
 
 .container {
-  margin-top: getMargin(1200);
   padding: getPadding(600);
   border-radius: 5px;
   @include boxShadow2;

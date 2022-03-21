@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <AppProvider>
       <Layout>
         <Head>
-          <title>AlKon Blog</title>
+          <title>AlKon MDX Blog</title>
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta
             name="description"

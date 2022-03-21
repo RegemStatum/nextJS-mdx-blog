@@ -1,4 +1,5 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import PostsGrid from "../../components/posts/PostsGrid";
 import BreadCrumbs from "../../components/ui/BreadCrumbs";
@@ -17,9 +18,17 @@ const SingleCategoryPage: NextPage<SingleCategoryPageProps> = ({
 }) => {
   const router = useRouter();
   const path = router.asPath;
+  const headTitle = category[0].toUpperCase() + category.slice(1);
 
   return (
     <div className="page page-min-height">
+      <Head>
+        <title>AlKon MDX | {headTitle}</title>
+        <meta
+          name="description"
+          content={`Al Kon mdx blog ${category} page. Here you can find posts only by ${category} search criteria`}
+        />
+      </Head>
       <BreadCrumbs path={path} />
       <PageSection title={category}>
         <PostsGrid posts={posts} />
