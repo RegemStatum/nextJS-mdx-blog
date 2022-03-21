@@ -1,9 +1,10 @@
 import React, { FC } from "react";
 import { MDXRemote } from "next-mdx-remote";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 // post components
 import Image from "next/image";
 import Highlight from "./Highlight";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import Badge from "../../ui/Badge";
 // styles
 import styles from "./SinglePost.module.scss";
 
@@ -24,6 +25,7 @@ const code = ({ className, ...props }) => {
 const components = {
   Image,
   Highlight,
+  Badge,
   code,
 };
 

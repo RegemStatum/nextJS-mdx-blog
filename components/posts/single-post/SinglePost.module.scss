@@ -24,6 +24,7 @@
   }
 
   h2 {
+    margin-bottom: getMargin(600);
     @include text(700);
   }
 
