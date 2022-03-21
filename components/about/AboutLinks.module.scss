@@ -1,6 +1,7 @@
 @use "../../styles/abstracts/" as *;
 
 .container {
+  width: max-content;
   display: flex;
   gap: getMargin(1000);
   margin-top: getMargin(800);
