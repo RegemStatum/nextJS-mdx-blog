@@ -1,0 +1,15 @@
+@use "../../styles/abstracts/" as *;
+.post > span:first-of-type {
+  display: block;
+  margin-bottom: getMargin(800);
+  border-radius: 5px;
+}
+
+.post > span:first-of-type img {
+  margin-bottom: getMargin(800);
+}
+
+.post > h1:first-of-type {
+  margin: getMargin(1200) 0;
+}
+/*# sourceMappingURL=About.module.css.map */
