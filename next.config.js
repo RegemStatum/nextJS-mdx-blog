@@ -12,5 +12,9 @@ const withMDX = require("@next/mdx")({
 module.exports = withMDX({
   // Append the default value with md extensions
   reactStrictMode: true,
+    env: {
+    DB_URL:
+      "https://nextjs-mdx-blog-default-rtdb.europe-west1.firebasedatabase.app",
+  },
   pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
 });
