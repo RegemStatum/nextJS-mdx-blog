@@ -1,6 +1,7 @@
 import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { getFeaturedPostsInfo, getSinglePost } from "../../helpers/posts-util";
 import SinglePost from "../../components/posts/single-post/SinglePost";
+import Head from "next/head";
 
 interface SinglePostPageProps {
   meta: { [key: string]: any };
@@ -8,7 +9,15 @@ interface SinglePostPageProps {
 }
 
 const SinglePostPage: NextPage<SinglePostPageProps> = ({ meta, source }) => {
-  return <SinglePost meta={meta} source={source} />;
+  return (
+    <>
+      <Head>
+        <title>AlKon MDX | {meta.title}</title>
+        <meta name="description" content={meta.excerpt} />
+      </Head>
+      <SinglePost meta={meta} source={source} />;
+    </>
+  );
 };
 
 export default SinglePostPage;
